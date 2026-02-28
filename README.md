@@ -7,7 +7,7 @@ This is a simple Node.js application using **Express.js** and **MongoDB (Mongoos
 ## Features
 
 - **Home Route `/`**
-  - Displays options to **Sign Up** or **Log In**.
+  -  Serves a file that displays options to **Sign Up** or **Log In**.
 
 - **Sign Up**
   - Users can register with a unique email.
@@ -19,6 +19,9 @@ This is a simple Node.js application using **Express.js** and **MongoDB (Mongoos
   - The app validates credentials against the database.
   - On successful login, users are redirected to the **homepage**.
 
+- **File-Based Serving**
+  - All pages are rendered and served using **HTML/EJS templates** or static files.    
+
 ---
 
 ## Technologies Used
@@ -28,6 +31,8 @@ This is a simple Node.js application using **Express.js** and **MongoDB (Mongoos
 - MongoDB
 - Mongoose
 - body-parser
+- HTML
+- CSS
   
 ---
 
