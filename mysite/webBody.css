@@ -1,0 +1,88 @@
+.img-container{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 40px;
+    overflow: none;
+}
+
+.img-container .my-img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100px;
+    transition: 0.6s all;
+}
+
+.img-container .my-img:hover{
+    /* width: 300px;
+    height: 300px;
+    border-radius: 150px; */
+     transform: scale(1.25);
+}
+
+.whoami{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.occupation{
+    text-align: center;
+    font-size: 4rem;
+    margin: 0;
+}
+
+
+.self-description{
+    text-align: center;
+    line-height: 30px;
+    /* font-size: 20px; */
+    font-weight: 550;
+    padding-left: 150px;
+    padding-right: 150px;
+    
+
+}
+
+.self-description .unique-line{
+    font-size: 25px;
+    color: rgb(90, 90, 90);
+}
+
+.reach-button{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 30px;
+}
+
+.reach-button button{
+    padding: 1em;
+    margin-top: 15px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(141, 202, 141);
+    color: white;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.reach-button a{
+    text-decoration: none;
+    color: black;
+}
+
+.reach-button button:hover{
+    transform: scale(1.25);
+    opacity: .66;
+}
+
+.ending-p{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}

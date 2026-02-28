@@ -1,0 +1,56 @@
+body{
+    background-image: url("background-img/mainone.webp");
+    font-family: arial;
+    margin: 0;
+}
+
+nav{
+    display:flex;
+    justify-items: center;
+    align-items: center;
+    height: 15vh;
+
+}
+
+.logo{
+    display: flex;
+    flex:1;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-left: 25px;
+}
+
+.description a { 
+    color: black;
+    font-size: 1rem;
+    font-weight: 550;
+    padding-right: 25px;
+    display: inline-block;
+    text-decoration: none;
+    justify-content: space-between;
+    transition: 0.5s all;
+}
+
+.description a:hover{
+     text-decoration: underline;
+     transform: scale(1.25);
+     /* box-shadow: 2px 2px 5px gray; */
+}
+
+.description button{
+    margin-right: 25px;
+    font-size: 1rem;
+    font-weight: 550;
+    padding: .8em;
+    border: none;
+    background-color: rgb(141, 202, 141);
+    border-radius: 20px;
+    transition: 0.5s;
+    transition: .5s;
+}
+
+.description button:hover{
+    transform: scale(1.25);
+    opacity: .66;
+}
+
