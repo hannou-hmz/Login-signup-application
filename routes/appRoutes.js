@@ -36,11 +36,11 @@ router.post('/signup' , (req , res)=>{
     let body = req.body;
     try{
         createUser(body.username , body.email , body.password);
-        res.redirect('/login');
+        return res.redirect('/login');
     }
     catch(e){
         console.log(e.message);
-        res.status(400).send('<h1>Bad request</h1>');
+        return res.status(400).send('<h1>Bad request</h1>');
     }
     
 });
