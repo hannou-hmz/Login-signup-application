@@ -1,6 +1,6 @@
 # Express & MongoDB Login/Signup App
 
-This is a simple Node.js application using **Express.js** and **MongoDB (Mongoose)** that allows users to **sign up** and **log in**. Each user has a **unique email** and an **auto-increment ID**.  
+This is a simple Node.js application using **Express.js** and **MongoDB (Mongoose)** that allows users to **sign up** and **log in**. Each user has a **unique email** , **password** is hashed with**bycrypt** before storing it to the database.  
 
 ---
 
@@ -12,7 +12,7 @@ This is a simple Node.js application using **Express.js** and **MongoDB (Mongoos
 - **Sign Up**
   - Users can register with a unique email.
   - User data is saved in MongoDB using **Mongoose**.
-  - Each user is assigned an **auto-increment ID**.
+  - Each user's password is hashed before stored to the database.
   
 - **Log In**
   - Users can log in with their email and password.
@@ -28,6 +28,7 @@ This is a simple Node.js application using **Express.js** and **MongoDB (Mongoos
 
 - Node.js
 - Express.js
+- bycrypt
 - MongoDB
 - Mongoose
 - body-parser
