@@ -11,9 +11,8 @@ router.get('/' , (req , res)=>{
 
 router.get('/homepage' , (req , res)=>{
     if(!req.session.userId){
-        return redirect('/login');
+        return res.redirect('/login');
     }
-
     return res.sendFile(path.join(__dirname , '..' , 'files' , 'interface.html'));
 });
 
@@ -26,11 +25,12 @@ router.post('/login' , async (req , res)=>{
     const user = await userExist(body.username , body.password);
     if(!user){
         console.log(`User does not exist`);
-        return res.status(404).send('<h1>User not found</h1>');
+        return res.redirect('/login');
     }
-    req.session.userId = user._id;
-    return res.redirect('/homepage');
-    
+    else{
+        req.session.userId = user._id;
+        return res.redirect('/homepage');
+    }  
 });
 
 router.get('/signup' , (req , res)=>{
@@ -50,8 +50,18 @@ router.post('/signup' , (req , res)=>{
     
 });
 
-// router.get('/logout' , (req , res)=>{
+router.get('/logout' , (req , res)=>{
+    req.session.destroy((e)=>{
+        if(e){
+            console.log(e.message);
+            return;
+        }
 
-// });
+        console.log('User logged out.');
+        res.clearCookie("connect.sid");
+        return res.redirect('/login');
+    });
+    
+});
 
 module.exports = router

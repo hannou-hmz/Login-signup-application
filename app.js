@@ -26,6 +26,7 @@ app.use('/' , route);
 app.use('/homepage' , route);
 app.use('/signup' , route);
 app.use('/login' , route);
+app.use('/logout' , route);
 
 app.use((req , res)=>{
     return res.sendFile(path.join(__dirname , 'files' , '404.html'));
