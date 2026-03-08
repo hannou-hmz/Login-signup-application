@@ -19,6 +19,14 @@ This is a simple Node.js application using **Express.js** and **MongoDB (Mongoos
   - The app validates credentials against the database.
   - On successful login, users are redirected to the **homepage**.
 
+- **Session-Based Authentication**
+  This application uses session-based authentication to control access to protected pages.
+  - The homepage is protected and can only be accessed by users who are already logged in.
+  - If a user tries to access the homepage without an active session, they are automatically redirected to /login.
+  - When a user logs in successfully, a session is created and the user's _id is stored in the session.
+  - Sessions are persisted in MongoDB, allowing the server to remember authenticated users.
+  - If the user logs out, the session is destroyed, and any attempt to access protected pages will redirect the user back to /login.
+
 - **File-Based Serving**
   - All pages are rendered and served using **HTML/EJS templates** or static files.    
 
