@@ -51,8 +51,14 @@ async function userExist(name , ps){
     }
     try{
         const validPasswd = await bcrypt.compare(ps , user.password);
+        if(!validPasswd){
+            console.log('Invalid username or password.');
+             return;
+        }
+
         console.log(`Valid password`);
-        return validPasswd;
+        return user;
+        
     }
     catch(e){
         console.log(e.message);
@@ -63,5 +69,5 @@ async function userExist(name , ps){
 
 module.exports = {
     createUser,
-    userExist
+    userExist,
 }

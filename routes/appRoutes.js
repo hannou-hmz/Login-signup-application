@@ -10,7 +10,11 @@ router.get('/' , (req , res)=>{
 });
 
 router.get('/homepage' , (req , res)=>{
-    return res.sendFile(path.join(__dirname , '..' , 'mysite' , 'portfolioi2.html'));
+    if(!req.session.userId){
+        return redirect('/login');
+    }
+
+    return res.sendFile(path.join(__dirname , '..' , 'files' , 'interface.html'));
 });
 
 router.get('/login' , (req , res)=>{
@@ -19,13 +23,14 @@ router.get('/login' , (req , res)=>{
 
 router.post('/login' , async (req , res)=>{
     let body = req.body;
-    const exist = await userExist(body.username , body.password);
-    if(exist){
-        return res.redirect('/homepage');
+    const user = await userExist(body.username , body.password);
+    if(!user){
+        console.log(`User does not exist`);
+        return res.status(404).send('<h1>User not found</h1>');
     }
-
-    console.log(`User does not exist`);
-    return res.status(404).send('<h1>User not found</h1>');
+    req.session.userId = user._id;
+    return res.redirect('/homepage');
+    
 });
 
 router.get('/signup' , (req , res)=>{
@@ -44,5 +49,9 @@ router.post('/signup' , (req , res)=>{
     }
     
 });
+
+// router.get('/logout' , (req , res)=>{
+
+// });
 
 module.exports = router
